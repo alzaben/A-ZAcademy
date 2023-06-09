@@ -1,0 +1,38 @@
+﻿
+@model IEnumerable<RequestNewCourse>
+
+
+<!-- Registration Start -->
+<div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+    <div class="container py-5">
+        @foreach (var item in Model)
+        {
+            <div class="row align-items-center">
+            <div class="col-lg-7 mb-5 mb-lg-0">
+                <div class="mb-4">
+                    
+                    <h1 class="text-white">@item.Title</h1>
+                </div>
+                <p class="text-white">
+                    @item.Description
+                </p>
+                
+            </div>
+            <div class="col-lg-5">
+                <div class="card border-0">
+                    <div class="card-header bg-light text-center p-4">
+                            <h1 class="m-0">Request New Course Now</h1>
+                    </div>
+                    <div class="card-body rounded-bottom bg-primary p-5">
+                            <div>
+                                <a class="btn btn-dark btn-block border-0 py-3" asp-action="RequestNewCourseForm" asp-controller="Home" >Click Here</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+        
+    </div>
+</div>
+<!-- Registration End -->

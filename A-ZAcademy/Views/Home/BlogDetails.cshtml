@@ -1,0 +1,46 @@
+﻿@model A_ZAcademy.Models.Blog
+
+@{
+    ViewData["Title"] = "BlogDetails";
+}
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>@Model.BlogTitle</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+</head>
+<body>
+    
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>@Model.BlogTitle</h1>
+                    <p> on @Model.CreationDate</p>
+                    <img src="@Url.Content(Model.BlogImg)" alt="Blog Post Image" class="img-fluid">
+                    <p>@Model.BlogDescription</p>
+                    
+                </div>
+              
+            </div>
+        </div>
+    </main>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+
+</html>

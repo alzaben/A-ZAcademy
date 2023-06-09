@@ -1,0 +1,108 @@
+﻿
+
+@model A_ZAcademy.Models.ViewModels.CourseReViewModel
+
+@{
+	ViewData["Title"] = "PageDetails";
+
+}
+
+
+<div class="container">
+
+	<div class="row">
+		<div class="col-sm-3" style="background-color:aliceblue;">
+			
+			<img src="@Url.Content(Model.Course!.Img)" class="d-block w-100" alt="@Model.Course.CourseTitle"> 
+
+			<h1>inclode</h1>
+			<table class="table">
+				<tr>
+					<td>Time :@Model.Course.Hours</td>
+					
+				</tr>
+				<tr>
+					<td>Start Time :@Model.Course.StartTime</td>
+					
+				</tr>
+				<tr>
+					<td>Duration :@Model.Course.Duration</td>
+					
+				</tr>
+				<tr>
+					<td>Price :@Model.Course.Price</td>
+
+				</tr>
+			</table>
+			
+			
+		</div>
+		<div class="col-sm-9" style="background-color:aliceblue;">
+			
+			<h1>@Model.Course.CourseTitle</h1>
+			<h1>Discription</h1>
+			<p>@Model.Course.CourseDescription</p>
+			
+		</div>
+	</div>
+	<h4>CourseRequest</h4>
+	
+	<div class="row" style="margin:auto">
+		<div class="col-md-4">
+			<form asp-action="CourseRequest">
+
+				<div asp-validation-summary="All" class="text-danger"></div>
+				
+				<div class="form-group">
+					<label asp-for="CourseRequest!.Name" class="control-label"></label>
+					<input asp-for="CourseRequest!.Name" class="form-control" />
+					<span asp-validation-for="CourseRequest!.Name" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="CourseRequest!.Email" class="control-label"></label>
+					<input asp-for="CourseRequest!.Email" class="form-control" />
+					<span asp-validation-for="CourseRequest!.Email" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<label asp-for="CourseRequest!.Phone" class="control-label"></label>
+					<input asp-for="CourseRequest!.Phone" class="form-control" />
+					<span asp-validation-for="CourseRequest!.Phone" class="text-danger"></span>
+				</div>
+				<div class="form-group">
+					<input type="submit" value="Send" class="btn btn-primary" />
+				</div>
+			</form>
+		</div>
+	</div>
+
+	<div>
+		<a asp-action="Index">Back to List</a>
+	</div>
+</div>
+<div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿
+@model IEnumerable<Course> 
+<!-- Courses Start -->
+<div class="container-fluid py-5">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <h5 class="text-primary text-uppercase mb-3" style="letter-spacing: 5px;">Courses</h5>
+            <h1>Our Popular Courses</h1>
+
+        </div>
+        <div class="row">
+            
+                @foreach (var item in Model)
+                {<div class="col-lg-4 col-md-6 mb-4">
+                    <div class="rounded overflow-hidden mb-2">
+                        <a asp-action="PageDetails" asp-controller="Course" asp-route-id="@item.CourseId">
+
+                            
+                            <img class="img-fluid" src="@Url.Content(item.Img)" alt="">
+                      
+                    <div class="bg-secondary p-4">
+                        <div class="d-flex justify-content-between mb-3">
+                           
+                            <small class="m-0"><i class="far fa-clock text-primary mr-2"></i>@item.Duration</small>
+                        </div>
+                        <a class="h5" href="">@item.CourseTitle</a>
+                        <div class="border-top mt-4 pt-4">
+                            <div class="d-flex justify-content-between">
+                              
+                                <h5 class="m-0">@item.Price</h5>
+                            </div>
+                        </div>
+                    </div>
+                        </a>
+                </div>
+
+                </div>
+                }
+                
+            
+
+        </div>
+    </div>
+</div>
+<!-- Courses End -->

@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Menu>
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> signInManager
+<div class="container-fluid">
+    <div class="row border-top px-xl-5">
+        <div style="margin:auto" class="col-lg-3 d-none d-lg-block">
+            <form method="get" asp-action="Search">
+                <input type="search" name="searchTerm" class="=search-field" />
+                <input type="submit" value="Search" class="btn-primary" />
+            </form>
+          
+        </div>
+        <div class="col-lg-9">
+            <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
+                <a href="" class="text-decoration-none d-block d-lg-none">
+                    <h1 class="m-0"><span class="text-primary">E</span>COURSES</h1>
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+
+                    <div class="navbar-nav py-0">
+                        @foreach (var item in Model)
+                        {
+                            <div class="navbar-nav py-0">
+                                <a href="@item.MenuUrl" class="nav-item nav-link ">@item.MenuTitle</a>
+                              
+                            </div>
+                        
+                       
+                       
+                        }
+                        
+                    </div>
+                    
+                    @if (signInManager.IsSignedIn(User))
+                    {
+                        <a asp-action="Logout" asp-controller="Account" class="nav-link text-dark">Logout</a>
+
+
+                    }
+                    else
+                    {
+                        <a asp-action="Login" asp-controller="Account" class="btn btn-primary py-2 px-4 ml-auto d-none d-lg-block">Join Now</a>
+                    }
+                </div>
+                
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Navbar End -->
